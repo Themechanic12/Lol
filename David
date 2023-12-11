@@ -1,0 +1,55 @@
+import time
+
+def introduction():
+    print("Welcome to the Adventure Game!")
+    time.sleep(1)
+    print("You find yourself standing at the entrance of a mysterious cave.")
+    time.sleep(1)
+    print("You have two paths ahead. Will you go 'left' or 'right'?")
+
+def left_path():
+    print("You chose the left path.")
+    time.sleep(1)
+    print("You encounter a friendly group of elves.")
+    time.sleep(1)
+    print("They offer you a magical potion.")
+    choice = input("Will you 'drink' the potion or 'refuse' it? ")
+    if choice.lower() == "drink":
+        print("You feel a surge of energy! The elves guide you safely out of the cave.")
+        return True
+    else:
+        print("You politely refuse the potion. The elves wish you well, and you continue exploring.")
+        return False
+
+def right_path():
+    print("You chose the right path.")
+    time.sleep(1)
+    print("You come across a sleeping dragon!")
+    time.sleep(1)
+    print("It looks dangerous. Do you try to 'sneak' past it or 'wake' it up?")
+    choice = input("Your choice: ")
+    if choice.lower() == "sneak":
+        print("You manage to sneak past the dragon and safely exit the cave.")
+        return True
+    else:
+        print("You accidentally wake up the dragon! It breathes fire, and... Game over.")
+        return False
+
+def main():
+    introduction()
+
+    while True:
+        user_choice = input("Make your choice: 'left' or 'right'? ")
+        if user_choice.lower() == "left":
+            if left_path():
+                print("Congratulations! You successfully completed the adventure.")
+                break
+        elif user_choice.lower() == "right":
+            if right_path():
+                print("Congratulations! You successfully completed the adventure.")
+                break
+        else:
+            print("Invalid choice. Please enter 'left' or 'right'.")
+
+if __name__ == "__main__":
+    main()
